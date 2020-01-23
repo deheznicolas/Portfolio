@@ -1,0 +1,177 @@
+
+html {
+  margin : 0;
+  padding : 0;
+  
+}
+
+   ///////////////
+  ///FULL PAGE///
+ //////////////
+body {
+  width : 100%;
+  height : 3000px;
+  margin : 0;
+  font-family: 'Montserrat', sans-serif;
+  background: rgb(15, 14, 14);
+  background: linear-gradient(180deg, rgba(15, 14, 14, 0.925) 30%, rgba(0,0,8,1) 50%, rgba(0,0,0,1) 100%);
+  header {
+    width : 100%;
+    #firstname {
+      color : rgb(110, 179, 167); 
+      text-transform: uppercase;
+      font-size : 150px; 
+      font-weight: bold;     
+      width : 100%;
+    }
+    #name {
+      color : rgba(15, 14, 14, 0.925);
+      text-shadow: -1px 1px 0 white,1px 1px 0 white, 1px -1px 0 white, -1px -1px 0 white;
+      text-transform: uppercase;
+      text-align : left;
+      margin-top : -110;
+      font-size : 150px; 
+      font-weight: bold;
+      width : 100%;
+      animation : transitionIn 5s;
+      border-bottom: solid 1px white;
+    }
+
+    @keyframes transitionIn {
+      from {
+        clip-path: inset(0 100% 0 0);
+        padding-left : 100px;
+      }
+      to {
+        clip-path: inset(0 0 0 0);
+        padding-left : 0;
+      }
+    }
+
+    #name:hover {
+      color : rgb(110, 179, 167);
+      text-shadow: -1px 1px 0 rgb(110, 179, 167),1px 1px 0 rgb(110, 179, 167), 1px -1px 0 rgb(110, 179, 167), -1px -1px 0 rgb(110, 179, 167);
+    }
+     #title-part1 {      
+      color : rgb(110, 179, 167);
+      text-transform: uppercase;
+      font-size : 150px; 
+      font-weight: bold;
+      width : 100%;
+    }
+     #title-part2 {
+      color : rgba(15, 14, 14, 0.925);
+      text-shadow: -1px 1px 0 white,1px 1px 0 white, 1px -1px 0 white, -1px -1px 0 white;
+      text-transform: uppercase;
+      text-align : left; 
+      font-size : 150px; 
+      font-weight: bold;
+      margin-top : -110px;
+      padding-left : 50px;
+
+      mix-blend-mode: color-dodge;
+     }
+     .explore {
+       margin-top : 50px;
+        text-align: center;
+        width : 100%;
+        color :white;
+        font-size : 17px;
+        text-transform : uppercase;
+        font-family : 'Montserrat', sans-serif;
+        animation: sliding-arrow 2s ease-in infinite alternate;
+
+      }
+     .container-arrow {
+       display : block;
+       margin-top : 50px;
+       margin-right : auto;
+       margin-left : auto;
+       width : 30px;
+       height : 60px;
+
+      button {
+        background: none;
+	      color: inherit;
+	      border: none;
+	      padding: 0;
+	      outline: inherit;
+      }
+       .arrow-down {
+        display : block;
+        margin-top : auto;
+        margin-bottom : auto;
+        margin-right : auto;
+        margin-left : auto;
+        width : 30px;
+        height : 30px;
+        border-bottom : solid 2px white;
+        border-right : solid 2px white;
+
+     
+        transform: rotate(45deg); 
+      &::before{
+        transition: all 0.4s;  
+        position:absolute;
+        content:"";
+        border : solid 2px white;
+        width: 100%;
+        height : 100%;
+        top : -2px;
+        left: -2px;
+        transform: scaleX(1) scaleY(1);
+
+      }
+      .little-arrow-down {
+        display : block;
+        width : 22px;
+        height : 22px;
+        border-bottom : solid 1px white;
+        border-right : solid 1px white;
+      }
+    }
+   .arrow-down:hover {
+    &::before{
+      border-top : solid 2px rgba(15, 14, 14, 0.925);
+      border-left : solid 2px rgba(15, 14, 14, 0.925);
+      transform: scaleX(0) scaleY(0);
+    }
+   }
+  .star-transition {
+    height : 500px;
+  }
+  #main {
+    display : flex;
+    flex-direction : row;
+     #left-side-elements {
+      width : 100%;
+      height : 100vw;
+      canvas {
+        width : 100%;
+        height: 100%;
+      }
+     } 
+  }
+
+ 
+}
+
+
+   ///////////////
+  ///ANIMATION///
+ ///////////////
+ 
+ 
+ @keyframes sliding-arrow {
+      0% {      
+                transform: translateY(0);
+      }
+      100% {
+                transform: translateY(5px);
+
+      }
+    }
+    
+     }
+    
+  }
