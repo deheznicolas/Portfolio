@@ -174,7 +174,6 @@ header {
       position: relative;
       top: 50%;
       left: -20%;
-      width: 60%;
       transform: rotate(-90deg);
       text-align: left; }
       #about #nav-bar ul li {
@@ -183,33 +182,31 @@ header {
         margin-right: 10%;
         margin-bottom: 5px;
         width: 33%; }
-        #about #nav-bar ul li a {
-          text-decoration: none;
-          color: white; }
-        #about #nav-bar ul li::before {
-          content: '';
-          position: absolute;
-          transform: rotate(-90deg);
-          top: -1em;
-          left: 0;
-          width: 1px;
-          height: 100%;
-          border: solid 1px white; }
+        #about #nav-bar ul li button {
+          background: none;
+          color: inherit;
+          border: none;
+          padding: 0;
+          outline: inherit; }
+        #about #nav-bar ul li button:hover {
+          border-bottom: solid 1px white; }
   #about #text {
     width: 50%;
     height: 100vh;
     padding-top: 10%;
-    text-align: center; }
-    #about #text #story {
+    text-align: center;
+    margin-top: auto;
+    margin-bottom: auto; }
+    #about #text div {
       width: 100%;
       color: white;
       border: solid 1px white;
       margin-left: auto;
       margin-right: auto; }
-      #about #text #story h1 {
+      #about #text div h1 {
         width: 100%;
         font-size: 3em; }
-      #about #text #story p {
+      #about #text div p {
         font-size: 1.5em; }
 
 @keyframes growButton {
