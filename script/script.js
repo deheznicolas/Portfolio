@@ -15,12 +15,35 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 let story = document.getElementById("story");
 let dev = document.getElementById("dev");
 let design = document.getElementById("design");
+let backgroundBtn = '#FFFFFF';
+let color = '#000000';
 
 story.style.display = 'block';
 dev.style.display = 'none';
 design.style.display = 'none';
 
 
+//CHANGE BACKGROUND AND COLOR WHEN ON THE CONTENT
+// if (story.style.display == 'block') {
+//   document.getElementById("story-btn").style.backgroundColor = backgroundBtn;
+//   document.getElementById("story-btn").style.color = color;
+// }
+// else {
+//   if (dev.style.display == 'block') {
+//     document.getElementById("dev-btn").style.backgroundColor = backgroundBtn;
+//     document.getElementById("dev-btn").style.color = color;
+//   } else {
+//     if (design.style.display == 'block') {
+//       document.getElementById("design-btn").style.backgroundColor = backgroundBtn;
+//       document.getElementById("design-btn").style.color = color;
+//     }
+//   }
+// }
+
+
+
+
+//CHANGE CONTENT ON CLICK
 document.getElementById("story-btn").addEventListener('click', () => {
   if (dev.style.display == 'block' || design.style.display == 'block') {
     dev.style.display = 'none';
@@ -44,6 +67,19 @@ document.getElementById("design-btn").addEventListener('click', () => {
 
   }
 })
+
+
+var i = 0;
+var txt = 'Lorem ipsum typing effect!'; /* The text */
+var speed = 50; /* The speed/duration of the effect in milliseconds */
+
+function typeWriter() {
+  if (i < txt.length) {
+    document.getElementsByClassName("text-animated").innerHTML += txt.charAt(i);
+    i++;
+    setTimeout(typeWriter, speed);
+  }
+}
 
 
 

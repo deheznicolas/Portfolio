@@ -8,7 +8,8 @@ body {
   margin: 0;
   font-family: 'Space Mono', monospace;
   font-size: 10px;
-  background-color: black; }
+  background-color: black;
+  letter-spacing: 2px; }
 
 header {
   width: 100%;
@@ -37,7 +38,7 @@ header {
       position: absolute;
       width: 20px;
       height: 20px;
-      border-radius: 100%;
+      border-radius: 50% 0% 50% 50%;
       background-color: white;
       top: 77px;
       left: 49px; }
@@ -166,86 +167,106 @@ header {
   height: 100vh; }
 
 #about {
-  height: 100vh;
+  height: 90vh;
   width: 100%;
-  display: flex;
-  flex-direction: row;
   margin-top: 10%; }
-  #about #nav-bar {
-    width: 40%;
-    height: 100%;
-    color: white;
-    font-size: 1.6em; }
-    #about #nav-bar ul {
-      display: flex;
-      flex-direction: row;
-      justify-content: flex-end;
-      position: relative;
-      top: 50%;
-      left: -20%;
-      transform: rotate(-90deg);
-      text-align: left; }
-      #about #nav-bar ul li {
-        list-style-type: none;
-        margin-left: 10%;
-        margin-right: 10%;
-        margin-bottom: 5px;
-        width: 33%; }
-        #about #nav-bar ul li button {
-          background: none;
-          color: inherit;
-          border: none;
-          padding: 0;
-          outline: inherit; }
-        #about #nav-bar ul li button:hover {
-          border-bottom: solid 1px white; }
-  #about #text {
-    width: 50%;
-    height: 100vh;
-    padding-top: 10%;
-    text-align: center; }
-    #about #text div {
-      width: 50%;
-      height: 50%;
+  #about #container-about {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100%; }
+    #about #container-about #nav-bar {
+      width: 40%;
+      height: 100%;
       color: white;
-      margin-top: auto;
-      margin-bottom: auto;
+      font-size: 1.6em; }
+      #about #container-about #nav-bar ul {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        position: relative;
+        top: 50%;
+        left: -20%;
+        transform: rotate(-90deg);
+        text-align: left; }
+        #about #container-about #nav-bar ul li {
+          list-style-type: none;
+          margin-left: 10%;
+          margin-right: 10%;
+          margin-bottom: 5px;
+          width: 33%; }
+          #about #container-about #nav-bar ul li button {
+            background: none;
+            color: inherit;
+            border: none;
+            padding-left: 5px;
+            padding-right: 5px;
+            outline: inherit; }
+          #about #container-about #nav-bar ul li button:hover {
+            border-bottom: solid 1px white; }
+    #about #container-about #text {
+      width: 50%;
+      height: 100vh;
+      padding-top: 5%;
+      text-align: center; }
+      #about #container-about #text div {
+        width: 50%;
+        height: 50%;
+        color: white;
+        margin-top: auto;
+        margin-bottom: auto;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 5px; }
+        #about #container-about #text div p {
+          margin-top: auto;
+          margin-bottom: auto;
+          font-size: 1.5em;
+          text-align: left;
+          border-left: solid 5px white; }
+          #about #container-about #text div p span {
+            background-color: white;
+            color: black; }
+      #about #container-about #text:before {
+        content: '';
+        display: inline-block;
+        height: 1px;
+        width: 10%;
+        margin-right: 50%;
+        margin-bottom: 10%;
+        background-color: #666;
+        transition: all 500ms;
+        animation: showLine;
+        animation-duration: 4s;
+        animation-fill-mode: forwards;
+        animation-delay: 1s; }
+      #about #container-about #text:after {
+        content: '';
+        display: inline-block;
+        height: 1px;
+        width: 10%;
+        margin-left: 50%;
+        background-color: #666;
+        transition: all 500ms;
+        animation: showLine;
+        animation-duration: 4s;
+        animation-fill-mode: forwards;
+        animation-delay: 1s; }
+  #about #btn {
+    width: 100%;
+    height: 10vh; }
+    #about #btn #next {
+      display: block;
       margin-left: auto;
       margin-right: auto;
-      padding: 5px; }
-      #about #text div h1 {
-        width: 100%;
-        font-size: 3em;
-        margin-top: 0; }
-      #about #text div p {
-        padding-top: auto;
-        padding-bottom: auto;
-        font-size: 1.5em; }
-    #about #text:before {
-      content: '';
-      display: inline-block;
-      height: 1px;
-      width: 10%;
-      margin-right: 50%;
-      margin-bottom: 10%;
-      background-color: #666;
-      transition: all 500ms;
-      animation: showLine;
-      animation-duration: 4s;
-      animation-fill-mode: forwards;
-      animation-delay: 1s; }
-    #about #text:after {
-      content: '';
-      display: inline-block;
-      height: 1px;
-      width: 10%;
-      margin-left: 50%;
-      background-color: #666;
-      transition: all 500ms;
-      animation: showLine;
-      animation-duration: 4s;
-      animation-fill-mode: forwards;
-      animation-delay: 1s; }
+      margin-bottom: -5%;
+      width: 30px;
+      height: 30px;
+      background-color: black;
+      border: solid 1px white;
+      padding: 0;
+      outline: inherit;
+      transform: rotate(-45deg); }
 
 @keyframes growButton {
   from {
