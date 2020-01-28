@@ -171,7 +171,9 @@ header {
 #about {
   height: 90vh;
   width: 100%;
-  margin-top: 10%; }
+  margin-top: 10%;
+  background-image: url(../../img/background.svg) no-repeat;
+  background-size: contain; }
   #about #container-about {
     display: flex;
     flex-direction: row;
@@ -275,7 +277,7 @@ header {
   height: 100vh;
   display: flex;
   flex-direction: column;
-  margin-top: 10%;
+  margin-top: 5%;
   color: white;
   text-align: center; }
   #project .container-project {
@@ -299,7 +301,22 @@ header {
     width: 100%; }
     #project .constellation-project .svg {
       width: 100%;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
       transform: rotateX(-40deg); }
+      #project .constellation-project .svg #bracket-left {
+        height: 100%;
+        width: 10px;
+        border-top: solid 1px white;
+        border-left: solid 1px white;
+        border-bottom: solid 1px white; }
+      #project .constellation-project .svg #bracket-right {
+        height: 100%;
+        width: 10px;
+        border-top: solid 1px white;
+        border-right: solid 1px white;
+        border-bottom: solid 1px white; }
       #project .constellation-project .svg .layer {
         animation: gravity 3s linear infinite; }
       #project .constellation-project .svg .StarAnimation {
@@ -308,6 +325,10 @@ header {
         animation: flicker 2s linear infinite; }
       #project .constellation-project .svg .StarAnimation3 {
         animation: flicker 3s linear infinite; }
+
+img {
+  width: 100%;
+  height: 100vh; }
 
 @keyframes growButton {
   from {
