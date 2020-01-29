@@ -10,8 +10,8 @@
   <title>Document</title>
 </head>
 
-<body>
-  <header>
+<body id="fullpage">
+  <header class="section">
     <h1 id="author">Made by Enric Dulieu</h1>
     <div id="global-circle">
       <div id="circle1">
@@ -23,7 +23,7 @@
     </div>
     <h1 id="travel-text">scroll to travel</h1>
     <div class="container-arrow">
-      <button onclick="window.location.href='#about'" id="button">
+      <button onclick="transition();" id="button">
         <div class="arrow-down">
           <div class="little-arrow-down"></div>
         </div>
@@ -35,7 +35,7 @@
     <canvas id="mycanvas"></canvas>
   </section>
 
-  <section id="about">
+  <section class="section" id="about">
     <div id="container-about">
       <div id="nav-bar">
         <ul>
@@ -46,21 +46,21 @@
       </div>
       <div id="text">
         <div id="story">
-          <p class="text-animated">During my two years of graduate studies in computer management, I discovered web
+          <p>During my two years of graduate studies in computer management, I discovered web
             development. Passionate, I
             embarked on the Becode adventure in order to become a developer. Throughout my career, I have explored the
             various aspects of web development. Finally, I chose my path by deciding to become Developer
             <span>Front-End.</span> </p>
         </div>
         <div id="dev">
-          <p class="text-animated"><span>Front-End</span> technologies allow me to express all my imagination. So I
+          <p><span>Front-End</span> technologies allow me to express all my imagination. So I
             chose to
             specialize
             in the Front-End in
             order to produce ever more creative content.</p>
         </div>
         <div id="design">
-          <p class="text-animated">A good design certainly respects conditions. That’s why I became interested in the
+          <p>A good design certainly respects conditions. That’s why I became interested in the
             <span>UX
               and the UI</span> . These two
             concepts are important in the Web and I intend to focus on them even more in order to make my future
@@ -69,11 +69,8 @@
         </div>
       </div>
     </div>
-    <div id="btn">
-      <button id="next">lol</button>
-    </div>
   </section>
-  <section id="project">
+  <section class="section" id="project">
     <div class="container-project">
       <h1 id="project-title">Project</h1>
       <p>Hey ! My satellites have discovered a new constellation.
@@ -81,63 +78,79 @@
         Discover the information of this one by clicking on the stars</p>
     </div>
     <div class="constellation-project">
-      <div class="svg">
+      <div class="svg-area">
         <div id="bracket-left"></div>
-        <svg width="640" height="480" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
-          <!-- Created with SVG-edit - https://github.com/SVG-Edit/svgedit-->
-          <defs>
-            <filter id="svg_13_blur">
-              <feGaussianBlur stdDeviation="0.5" />
-            </filter>
-            <filter id="svg_12_blur">
-              <feGaussianBlur stdDeviation="0.5" />
-            </filter>
-            <filter id="svg_11_blur">
-              <feGaussianBlur stdDeviation="0.5" />
-            </filter>
-            <filter id="svg_5_blur">
-              <feGaussianBlur stdDeviation="0.5" />
-            </filter>
-            <filter id="svg_6_blur">
-              <feGaussianBlur stdDeviation="0.5" />
-            </filter>
-          </defs>
-          <g class="layer">
-            <line fill="none" id="svg_17" stroke="#ffffff" stroke-dasharray="null" stroke-linecap="null"
-              stroke-linejoin="null" stroke-width="2" x1="61.5" x2="269.5" y1="282.5" y2="329.5" />
-            <circle class="StarAnimation2" cx="502.68794" cy="167.95592" fill="#ffffff" filter="url(#svg_5_blur)"
-              id="Project1" r="1%" stroke="#ffffff" stroke-dasharray="null" stroke-linecap="null"
-              stroke-linejoin="null" />
-            <circle class="StarAnimation" cx="572.5" cy="42" fill="#ffffff" filter="url(#svg_6_blur)" id="svg_6" r="1%"
-              stroke="#ffffff" stroke-dasharray="null" stroke-linecap="null" stroke-linejoin="null" stroke-width="2" />
-            <circle class="StarAnimation2" cx="343.5" cy="197" fill="#ffffff" filter="url(#svg_11_blur)" id="svg_11"
-              r="1%" stroke="#ffffff" stroke-dasharray="null" stroke-linecap="null" stroke-linejoin="null"
-              stroke-width="0" />
-            <circle class="StarAnimation" cx="267.5" cy="328" fill="#ffffff" filter="url(#svg_12_blur)" id="svg_12"
-              r="1%" stroke="#ffffff" stroke-dasharray="null" stroke-linecap="null" stroke-linejoin="null"
-              stroke-width="3" />
-            <circle class="StarAnimation3" cx="62.5" cy="284" fill="#ffffff" filter="url(#svg_13_blur)" id="star1"
-              r="1%" stroke="#ffffff" stroke-dasharray="null" stroke-linecap="null" stroke-linejoin="null"
-              stroke-width="2" />
-            <line fill="none" id="svg_18" stroke="#ffffff" stroke-dasharray="null" stroke-linecap="null"
-              stroke-linejoin="null" stroke-width="2" x1="266.5" x2="342.5" y1="327" y2="197" />
-            <line fill="none" id="svg_19" stroke="#ffffff" stroke-dasharray="null" stroke-linecap="null"
-              stroke-linejoin="null" stroke-width="2" x1="344.5" x2="502.5" y1="197" y2="169" />
-            <line fill="none" id="svg_20" stroke="#ffffff" stroke-dasharray="null" stroke-linecap="null"
-              stroke-linejoin="null" stroke-width="2" x1="502.5" x2="573.5" y1="169" y2="40" />
-          </g>
-        </svg>
+        <div class="info-const">
+          <h1>PROJECT INFORMATIONS</h1>
+          <ul>
+            <li><span>Name</span>: <span id="project-name">PROJECT</span> </li>
+            <li><span>About</span>: <span id="project-about">some blabla</span> </li>
+            <li><span>Technologies</span>: HTML/CSS/JS</li>
+            <li><span>Time To Achieve</span>: 3 seconds i'm op</li>
+            <li><a href="">Click to see the project</a> </li>
+          </ul>
+        </div>
         <div id="bracket-right"></div>
+        <div class="svg">
+          <svg width="640" height="480" xmlns="http://www.w3.org/2000/svg" xmlns: svg="http://www.w3.org/2000/svg">
+            <!-- Created with SVG-edit - https://github.com/SVG-Edit/svgedit-->
+            <defs>
+              <filter id="svg_13_blur">
+                <feGaussianBlur stdDeviation="0.5" />
+              </filter>
+              <filter id="svg_12_blur">
+                <feGaussianBlur stdDeviation="0.5" />
+              </filter>
+              <filter id="svg_11_blur">
+                <feGaussianBlur stdDeviation="0.5" />
+              </filter>
+              <filter id="svg_5_blur">
+                <feGaussianBlur stdDeviation="0.5" />
+              </filter>
+              <filter id="svg_6_blur">
+                <feGaussianBlur stdDeviation="0.5" />
+              </filter>
+            </defs>
+            <g class="layer">
+              <line fill="none" id="svg_17" stroke="#ffffff" stroke-dasharray="null" stroke-linecap="null"
+                stroke-linejoin="null" stroke-width="1" x1="61.5" x2="269.5" y1="282.5" y2="329.5" />
+              <circle class="StarAnimation2 svg-star" cx="502.68794" cy="167.95592" fill="#ffffff"
+                filter="url(#svg_5_blur)" id="Project1" r="1%" stroke="#ffffff" stroke-dasharray="null"
+                stroke-linecap="null" stroke-linejoin="null" />
+              <circle class="StarAnimation svg-star" cx="572.5" cy="42" fill="#ffffff" filter="url(#svg_6_blur)"
+                id="svg_6" r="1%" stroke="#ffffff" stroke-dasharray="null" stroke-linecap="null" stroke-linejoin="null"
+                stroke-width="2" />
+              <circle class="StarAnimation2 svg-star" cx="343.5" cy="197" fill="#ffffff" filter="url(#svg_11_blur)"
+                id="svg_11" r="1%" stroke="#ffffff" stroke-dasharray="null" stroke-linecap="null" stroke-linejoin="null"
+                stroke-width="0" />
+              <circle class="StarAnimation svg-star" cx="267.5" cy="328" fill="#ffffff" filter="url(#svg_12_blur)"
+                id="svg_12" r="1%" stroke="#ffffff" stroke-dasharray="null" stroke-linecap="null" stroke-linejoin="null"
+                stroke-width="3" />
+              <circle class="StarAnimation3 svg-star" cx="62.5" cy="284" fill="#ffffff" filter="url(#svg_13_blur)"
+                id="star1" r="1%" stroke="#ffffff" stroke-dasharray="null" stroke-linecap="null" stroke-linejoin="null"
+                stroke-width="2" />
+              <line fill="none" id="svg_18" stroke="#ffffff" stroke-dasharray="null" stroke-linecap="null"
+                stroke-linejoin="null" stroke-width="1" x1="266.5" x2="342.5" y1="327" y2="197" />
+              <line fill="none" id="svg_19" stroke="#ffffff" stroke-dasharray="null" stroke-linecap="null"
+                stroke-linejoin="null" stroke-width="1" x1="344.5" x2="502.5" y1="197" y2="169" />
+              <line fill="none" id="svg_20" stroke="#ffffff" stroke-dasharray="null" stroke-linecap="null"
+                stroke-linejoin="null" stroke-width="1" x1="502.5" x2="573.5" y1="169" y2="40" />
+            </g>
+          </svg>
+        </div>
+
+
 
       </div>
 
     </div>
   </section>
-  <img src="./img/background.svg" alt="">
+  <script src="./script/script.js"></script>
+  <script src="./script/starstransition.js"></script>
+  <script src="./script/fullpage.js"></script>
 
 
 </body>
-<script src="./script/script.js"></script>
-<script src="./script/starstransition.js"></script>
+
 
 </html>
