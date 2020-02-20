@@ -1,17 +1,29 @@
 
+//COLOR PICKER
+
+$primary : #E6D8AD;
+$body-color : rgb(216, 214, 189);
+$background-col : #C2B185;
+$secondary : #3F3229;
+$LightGrey : #65584A;
+
+
 html {
   margin : 0;
   padding : 0;
-  
+  scroll-behavior: smooth;
 }
 body {
   width : 100%;
   margin : 0;
   font-family: 'Space Mono', monospace;
   font-size : 10px;
-  background-color : black;
+  background-color : rgb(255, 253, 226);
   letter-spacing: 2px;
-  
+  perspective: 400px;
+  perspective-origin: right;
+  color : $LightGrey;
+  overflow : hidden;
   ::selection {
     background: #929292; 
   }
@@ -27,142 +39,121 @@ body {
 header {
     width: 100%;
     height: 100vh;
-    background-color: transparent; 
-    #global-circle {
-      margin-left : auto;
-      margin-right : auto;
-      width: 500px;
-      height: 500px;
-      animation: orbit 60s linear infinite;
-    }
-      #circle1 {
-        margin-left : auto;
-        margin-right : auto;
-        margin-top : 1%;
-        width : 500px;
-        height : 500px;
-        border-radius : 100%;
-        border : solid 1px white;
-        clip-path: inset(100% 0 0 0);
-        animation : showCircle1 2s;
-        animation-fill-mode: forwards;
-        animation-delay: 1s; 
-        &:before {
-          content: '';
-          position : absolute;
-          width : 20px;
-          height : 20px;
-          border-radius : 50% 0% 50% 50%;
-          background-color : white;
-          top: 77px;
-          left: 49px;
-        }  
-          #circle2 {
-            margin-left : auto;
-            margin-right : auto;
-            margin-top : 25%;
-            width : 250px;
-            height : 250px;
-            border-radius : 100%;
-            border : solid 1px white;
-            animation: orbit 20s linear infinite;
+    .nav-container {
+      width : 100vw;
+      height : 25px;
+      margin: 0;
+      padding: 0;
+      background-color : $secondary;
 
-            &:before {
-              content: '';
-              position : absolute;
-              width : 15px;
-              height : 15px;
-              border-radius : 50% 50% 50% 50%;
-              background-color : white;
-              top: 66px;
-              left: 3px;
-            }  
-          }
-              
-        } 
+    }
         #author {
           display : block;
           margin-left : auto;
           margin-right : auto;
-          color : white;
+          text-align : center;
+          color : $LightGrey;
           background-color : transparent;
-          font-size : 10px;
-          text-align :left;
+          font-size : 50px;
+          text-align : center;
           text-transform: uppercase;
           clip-path: inset(100% 0 0 0);
           animation : showTitle 2s;
           animation-fill-mode: forwards;
-          animation-delay: 3s;  
+          animation-delay: 0.5s;  
           position: relative;
           transition: all 500ms;
-          
-          &:before {
-            content: '';
-            display: inline-block;
-            height: 1px;
-            width: 15px;
-            margin-right: 12px;
-            margin-bottom: 4px;
-            background-color: #666;
-            transition: all 500ms;
-            animation : showLine;
-            animation-duration: 4s;
-            animation-fill-mode: forwards;
-            animation-delay : 3.5s;
+          text-shadow: 1px 0px 1px $primary,
+           0px 1px 1px $primary,
+            2px 1px 1px $primary,
+             1px 2px 1px $primary,
+              3px 2px 1px $primary,
+               2px 3px 1px $primary,
+                4px 3px 1px $primary,
+                 3px 4px 1px $primary,
+                  5px 4px 1px $primary,
+        }
+        .menu {
+          width : 100%;
+          height : 25vh;
+          margin-top : 10%;
+          display : flex;
+          flex-direction: row;
+          justify-content: space-around;
+          .menu-li {
+            width : 100px;
+            height : 100px;
+            text-align : center;
+            font-size : 15px;
+            border : solid 1px $LightGrey;
+            transform : rotate(-45deg);
+            transition : box-shadow 0.3s ease-in-out;            
+            a {
+              border : none;
+              outline: none;
+              background : none;
+              font-style: none;
+              text-decoration : none;
+              width : 100%;
+              height : 100%;
+              position : absolute;
+              top : 0;
+              left: 0;
+              &:before {
+                content: '';
+                display: inline-block;
+                height: 1px;
+                width: 100%;
+                margin-right: 12px;
+                margin-bottom: 4px;
+                background-color: $background-col;
+                animation : showLine;
+                animation-duration: 1s;
+                animation-fill-mode: forwards;
+                transform : rotate(45deg);
+  
+              }
+              &:after {
+                content: '';
+                display: inline-block;
+                height: 1px;
+                width: 100%;
+                margin-right: 12px;
+                margin-bottom: 4px;
+                background-color: $background-col;
+                animation : showLine;
+                animation-duration: 1s;
+                animation-fill-mode: forwards;
+                transform : rotate(45deg);
+  
+              }
+            }
+
+            p {
+              transform : rotate(45deg);
+              color : $LightGrey;
+              font-size : 15px;
+            }
+          }
+          .menu-li:hover {
+            color : $primary;
+            box-shadow: 0px 0px 10px 0px #3F3229;
           }
         }
-        #travel-text {
-          display : block;
-          margin-left : auto;
-          margin-right : auto;
-          color : white;
-          background-color : transparent;
-          text-align :center;
-          text-transform: uppercase;
-          clip-path: inset(100% 0 0 0);
-          animation : showTitle 2s;
-          animation-fill-mode: forwards;
-          animation-delay: 3s;  
-          position: relative;
-          transition: all 500ms;
-          
-          &:before {
-            content: '';
-            display: inline-block;
-            height: 1px;
-            width: 30px;
-            margin-right: 12px;
-            margin-bottom: 4px;
-            background-color: #666;
-            transition: all 500ms;
-            animation : showLine;
-            animation-duration: 4s;
-            animation-fill-mode: forwards;
-            animation-delay : 3.5s;
-          }
-          &:after {
-            content: '';
-            display: inline-block;
-            height: 1px;
-            width: 30px;
-            margin-left: 12px;
-            margin-bottom: 4px;
-            background-color: #666;
-            transition: all 500ms;
-            animation : showLine;
-            animation-duration: 4s;
-            animation-fill-mode: forwards;
-            animation-delay : 3.5s;
-          }
-        } 
+        h3 {
+          width : 100%;
+          text-align : center;
+          font-size : 15px;
+          color : $LightGrey;
+        }
      .container-arrow {
         display : block;
         margin-right : auto;
         margin-left : auto;
-        margin-top : 2%;
+        margin-top : 5%;
         width : 30px;
         height : 60px;
-        animation : growButton 1s;
+        animation : growButton 1s; 
           button {
             background: none;
             color: inherit;
@@ -179,9 +170,10 @@ header {
             margin-left : auto;
             width : 30px;
             height : 30px;
-            border-bottom : solid 1px white;
-            border-right : solid 1px white;
-            background-color : black;
+            border-bottom : solid 1px
+            $LightGrey;
+            border-right : solid 1px
+            $LightGrey;
             transition-property : background-color;
             transition-duration: 1s;
             transform: rotate(45deg); 
@@ -189,7 +181,8 @@ header {
               transition: all 0.4s;  
               position:absolute;
               content:"";
-              border: solid 1px white;
+              border: solid 1px
+              $LightGrey;
               width: 100%;
               height : 100%;
               top : -1px;
@@ -200,8 +193,10 @@ header {
               display : block;
               width : 22px;
               height : 22px;
-              border-bottom : solid 1px white;
-              border-right : solid 1px white;
+              border-bottom : solid 1px
+              $LightGrey;
+              border-right : solid 1px
+              $LightGrey;
               }
         }
       .arrow-down:hover {
@@ -212,274 +207,249 @@ header {
 
 }
 }  
-
-
-///////////////////////////////////////
+//////////////////////////////////////////////
 //
-// CANVAS AVEC ETOILES
+// SECTION ABOUT
 //
-//////////////////////////////////////
-
-#star-transition {
-  margin-top : -100vh;
-  height : 100vh; //ajustement des étoiles pour qu'elles soient derrière le header
-}
-#canvas {
+//////////////////////////////////////////////
+.about {
   width : 100%;
   height : 100vh;
-}
-
-
-
-/////////////////////////////////////////////////////////////////////////////////////////////
-//
-// Section ABOUT
-//
-////////////////////////////////////////////////////////////////////////////////////////////
-
-
-
-
-#about {
-  height : 90vh;
-  width : 100%;
-  background-image : url(../../img/background.svg);
-  padding-bottom : 10%;
-  #container-about {
-    display : flex;
-    flex-direction : row;
-    width : 100%;
-    height : 100%;
-    #nav-bar {
-    width : 40%;
-    height : 100%;
-    color : white;
-    font-size : 1.6em;
-    ul {
-      display : flex;
-      flex-direction : row;
-      justify-content: flex-end;
-      position : relative;
-      top: 50%;
-      left: -20%;
-      transform : rotate(-90deg);
-      text-align :left;
-      li {
-        border-top : solid 3px white;
-        list-style-type: none;
-        margin-left : 10%;
-        margin-right : 10%;
-        margin-bottom : 5px;
-        width : 33%;
-        button {
-          background: none;
-          color: inherit;
-          border: none;
-          padding-left : 5px;
-          padding-right : 5px;
-          outline: inherit;
-         }
-         button:hover {
-           border-bottom : solid 1px white;
-         }
-      }
-      
-      
-    }
+  display : flex;
+  flex-direction : row;
+  justify-content: space-around;
+  padding-top : 15%;
+  #anchor-top {
+    width : 1px;
+    height : 0px;
   }
-  #text {
-    width : 50%;
-    height : 100vh;
-    padding-top : 5%;
-    text-align : center;
-    div{
-      width : 50%;
-      height : 50%;
-      color : white;
-      margin-top : auto;
-      margin-bottom : auto;
-      margin-left : auto;
-      margin-right : auto;  
-      padding : 5px;
-      p {
-        margin-top : auto;
-        margin-bottom : auto;
-        font-size : 1.5em;
-        text-align : left;
-        border-left : solid 5px white;
-        span {
-          background-color : white;
-          color : black;
-        }
-      }
+  #pdp {
+    width : 300px;
+    height : 300px;
+    transform : rotate(45deg);
+    border : solid 1px $LightGrey; 
+    box-shadow: 0px 0px 20px 0px #3F3229;
+    img {
+      position : absolute;
+      top : -60px;
+      left : -60px;
+      width : 140%;
+      height : 140%;
+      transform : rotate(-45deg);
+      box-shadow: inset 10px 10px 49px 6px rgba(0,0,0,0.31);
+      clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
     }
     &:before {
       content: '';
+      z-index : 2;
       display: inline-block;
-      height: 1px;
-      width: 10%;
-      margin-right : 50%;
-      margin-bottom : 10%;
-      background-color: #666;
-      transition: all 500ms;
-      animation : showLine;
-      animation-duration: 4s;
-      animation-fill-mode: forwards;
-      animation-delay : 1s;
+      position : absolute;
+      top: 250px;
+      left: 150px;
+      height: 100px;
+      width: 100px;
+      margin-right: 12px;
+      margin-bottom: 4px;
+      background-color: $background-col;
+      animation : growButton 1s;
+    }
+    &:after {
+      content: '';
+      z-index : 3;
+      display: inline-block;
+      position : absolute;
+      top: 4px;
+      left: 4px;
+      height: 290px;
+      width: 290px;
+      margin-right: 12px;
+      margin-bottom: 4px;
+      border : solid 1px $LightGrey;
+      animation : growButton 1s;
+
+    }
+  }
+  #about-text {
+    width : 40%;
+    height : auto;
+    h2 {
+      font-size : 30px;
+      text-shadow: 1px 0px 1px $primary,
+      0px 1px 1px $primary,
+       2px 1px 1px $primary,
+        1px 2px 1px $primary,
+         3px 2px 1px $primary,
+          2px 3px 1px $primary,
+           4px 3px 1px $primary,
+            3px 4px 1px $primary,
+             5px 4px 1px $primary,
+    }
+    p {
+      font-size : 13px;
     }
     &:after {
       content: '';
       display: inline-block;
-      height: 1px;
-      width: 10%;
-      margin-left : 50%;
-      background-color: #666;
-      transition: all 500ms;
-      animation : showLine;
-      animation-duration: 4s;
-      animation-fill-mode: forwards;
-      animation-delay : 1s;
+      position : absolute;
+      height: 10px;
+      width: 40%;
+      margin-right: 12px;
+      margin-bottom: 4px;
+      background-color: $background-col;
+      animation : growButton 1s;
+
     }
   }
-  }
-  #btn {
-    width : 100%;
-    height : 10vh;
-    #next {
-    display : block;
-    margin-left:auto;
-    margin-right:auto;
-    margin-bottom : -5%;
-    width : 30px;
-    height : 30px;
-    background-color : black;
-    border : solid 1px white;
-    padding: 0;
-    outline: inherit;
-    transform : rotate(-45deg);
-  }
-  }
-  
+
 }
-
-
 ////////////////////////////////////
 //
-// SVG
+// SECTION PROJECT
 //
 ////////////////////////////////////
-
- #project {
+.project {
   width : 100%;
   height : 100vh;
   display : flex;
-  flex-direction : column;
-  color : white;
-  text-align : center;
-  background-image : url(../../img/background.svg);
-
-  .container-project {
-    width : 50%;
-    margin-left : auto;
-    margin-right : auto;
-    span {
-      background-color : white;
-      color : black;
-    }
-    h1 {
-      font-size : 1.6em;
-    }
-    p{
-      width : 100%;
-      text-align : center;
-      font-size : 1.5em;
-    }
-  }
-  .constellation-project {
-    margin-top : 5%;
+  flex-direction : row;
+  justify-content: space-around;
+  .container {
     display : flex;
-    flex-direction: row;
+    flex-direction : row;
     justify-content: space-around;
     width : 100%;
-    font-size : 1.5em;
+    height : 100%;
+    padding-top : 2%;
+    .main-square {
+      width : 350px;
+      height : 350px;
+      border : solid 1px $LightGrey;
+      text-align : left;
+      transform : rotate(-45deg);
+      z-index : 1;
+      background-color : $background-col;
+      transition : box-shadow 0.3s ease-in-out;    
+      margin-left : auto;
+      margin-right : auto;
+      &::before {
+        content: '';
+        display : inline-block;
+        position : absolute;
+        background-color : $background-col;
+        border-top : solid 1px $secondary;
+        border-right : solid 1px $secondary;
+        top: -50px;
+        left: 300px;
+        width : 100px;
+        height : 100px;
+        box-shadow: 0px 0px 10px 0px #3F3229;
+        z-index : 1;
+      }
+      h3 {
+        position : absolute;
+        height : 50px;
+        width : 200px;
+        font-size : 15px;
+        padding-left : 5px;
+        color : $secondary;
+        z-index : 3;
+        &::before {
+          content: '';
+          display : inline-block;
+          position : absolute;
+          border-bottom : solid 1px $secondary;
+          top: 35px;
+          left: 50px;
+          width: 500px;
+          z-index : 1;
+          opacity : 0.5;
 
-    .svg-area {
-      width : 100%;
-      height : 90%;
-      display : flex;
-      flex-direction: row;
-      justify-content: center;
-      .svg {
-        width : 50%;
-        animation : gravity 600s linear infinite;      
-      }
-      .info-const {
-        width : 30%;
-        padding-top : auto;
-        padding-bottom : auto;
-        h1 {
-          margin-top : -20px;
         }
-        ul {
-          height : 100%;
-          display : flex;
-          flex-direction: column;
-          justify-content: center;
-          li {
-            width : 100%;
-            margin-bottom : 10%;
-            margin-top : 10px;
-            text-align : left;
-            letter-spacing: 0px;
-            list-style-type: none;
-            span {
-              background-color: white;
-              color: black;
-              padding:2px;
-              font-weight: bold;
+      }
+      img {
+        position : absolute;
+        top: -70px;
+        left: -70px;
+        width: 140%;
+        height: 140%;
+        opacity: 0.7;
+        transform : rotate(45deg);
+        clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
 
-            }
-          }
-        }
-        .svg-star:hover {
-          animation : scaleStarHover 3s forwards;
-        }
-      }
-      #bracket-left {
-        height : 100%;
-        width : 10px;
-        border-top : solid 1px white;
-        border-left : solid 1px white;
-        border-bottom : solid 1px white;
-      }
-      #bracket-right {
-        height : 100%;
-        width : 10px;
-        border-top : solid 1px white;
-        border-right : solid 1px white;
-        border-bottom : solid 1px white;
-      }
-      .StarAnimation {
-        animation: flicker 3s linear infinite;
-      }
-      .StarAnimation2 {
-        animation: flicker 2s linear infinite;
-      }
-      .StarAnimation3 {
-        animation: flicker 3s linear infinite;
       }
       
     }
+    
+    .main-square:hover {
+      box-shadow: 0px 0px 20px 0px #3F3229;
 
+    }
+  }
+
+  .owl-stage, .owl-stage-outer {
+    height : 100vh;
   }
 }
 
-img {
-  width : 100%;
-  height : 100vh;
+.owl-stage {
+  display : flex;
+  flex-direction : row;
+  align-items: center;
+  justify-content: center;
 }
 
+.item2 {
+  display : block;
+  height : 50vh;
+  width : 50%;
+  margin-left : auto;
+  margin-right : auto;
+  &::before {
+    content:'';
+    position : absolute;
+    top: 100px;
+    left: 420px;
+    width: 300px;
+    height: 300px;
+    transform: rotate(45deg);
+    background-color: #E6D8AD;
+    border-bottom : solid 4px $secondary;
+    box-shadow: 0px 0px 20px 0px #3F3229;
+    opacity : 0.5;
+  }
+  &::after {
+    content:'';
+    position : absolute;
+    z-index: -1;
+    top: 0px;
+    left: 630px;
+    width: 200px;
+    height: 250px;
+    background-color: #C2B185;
+    border-right : solid 2px $secondary;
+    border-top : solid 2px $secondary;
+    box-shadow: 0px 0px 20px 0px #3F3229;
+    opacity : 0.5;
+  }
 
+}
+.item3 {
+  display : block;
+  height : 50vh;
+  width : 50%;
+  margin-left : auto;
+  margin-right : auto;
+  &::before {
+    content:'';
+    position : absolute;
+    top : 100px;
+    left : 300px;
+    width : 100px;
+    height : 100px;
+    border : solid 1px black;
+    transform : rotate(45deg);
+  }
+}
 
 //////////////////////////////////
 //
@@ -500,30 +470,6 @@ img {
   }
 }
 
- @keyframes showCircle1 {
-  from {
-    clip-path: inset(100% 0 0 0);
-    transform : rotate(0deg);
-
-  }
-  to {
-    clip-path: inset(0 0 0 0);
-    transform : rotate(-360deg);
-
-
-  }
-
-}
-
-@keyframes orbit {
-  0% {
-    transform : rotate(0deg);
-  }
-  100% {    
-    transform : rotate(-360deg);
-  }
-
-}
 
 //Title showing up from bottom
 @keyframes showTitle {
@@ -540,10 +486,10 @@ img {
 
 @keyframes showLine {
   from {
-    transform : scaleX(0);
+    transform : rotate(45deg) scaleX(0);
   }
   to {
-    transform: scaleX(100%);
+    transform: rotate(45deg) scaleX(100%);
   }
 }
  
@@ -555,7 +501,8 @@ img {
       }
       100% {
                 transform: translateY(5px);
-                background-color : black;
+                background-color :
+                $LightGrey;
 
       }
 }

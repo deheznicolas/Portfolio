@@ -5,7 +5,6 @@ let height;
 
 //Responsive Canvas for different screen size
 
-
 const canvasToResponsive = () => {
   width = document.getElementById("star-transition").clientWidth;
   height = document.getElementById("star-transition").clientHeight;
